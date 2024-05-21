@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="hero-overlay bg-opacity-40"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-3xl font-extrabold">
+            <h1 className="mb-5 text-3xl font-extrabold text-white">
               Why Choose Elite Painting ?
             </h1>
             <p className="mb-5 text-white">

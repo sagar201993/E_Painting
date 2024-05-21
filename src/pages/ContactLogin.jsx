@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import backgroundImage from "../images/interior/img1.avif";
+import SignUpUser from "../api/signUp";
+import { toast } from "react-toastify";
 
 const ContactLogin = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const SignUpHandler = (e) => {
+    e.preventDefault();
+    SignUpUser(email, password);
+    toast.success("you have successfuly Regiter with Elite Painting");
+    setName("");
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <>
       <h1 className="text-center mt-10 text-4xl font-bold">REGISTER WITH US</h1>
@@ -26,7 +41,7 @@ const ContactLogin = () => {
           </div>
 
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-opacity-90">
-            <form className="card-body">
+            <form className="card-body" onSubmit={SignUpHandler}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -35,6 +50,8 @@ const ContactLogin = () => {
                   type="text"
                   placeholder="Name"
                   className="input input-bordered"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
@@ -46,6 +63,8 @@ const ContactLogin = () => {
                   type="email"
                   placeholder="Email"
                   className="input input-bordered"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -57,17 +76,20 @@ const ContactLogin = () => {
                   type="password"
                   placeholder="Password"
                   className="input input-bordered"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <a href="/" className="label-text-alt link link-hover">
                     Forgot password?
                   </a>
                 </label>
               </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
-              </div>
+
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
             </form>
           </div>
         </div>

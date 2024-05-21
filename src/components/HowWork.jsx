@@ -10,7 +10,7 @@ const Card = ({ icon, title, description }) => (
 
 const HowWork = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 ">
       <h1 className="text-3xl font-bold text-center mb-8">How We Work</h1>{" "}
       {/* Heading added here */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-6">
